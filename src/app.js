@@ -21,7 +21,7 @@ app.post('/', (req, res) => {
   
   // console.log(fecha);
   console.log(dateUTC);
-  // console.log(req.query);
+  console.log(req.query);
   });
   
   // Iniciar el servidor para que escuche en el puerto especificado
