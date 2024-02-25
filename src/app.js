@@ -29,7 +29,5 @@ app.post('/', (req, res) => {
     console.log(`Servidor corriendo en http://localhost:${PORT}/`);
   });
 
-
-
 // app.listen(PORT)
 console.log('Server on port', PORT)
