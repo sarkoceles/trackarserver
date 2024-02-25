@@ -6,7 +6,7 @@ const mysql = require('mysql2');
 const app = express();
 
 // Configurar el puerto
-const puerto = 3000;
+const puerto =  process.env.PORT || 3000;
 
 // Configurar el middleware para manejar solicitudes POST
 app.use(express.text());
