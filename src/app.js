@@ -22,37 +22,6 @@ app.post('/', (req, res) => {
   // console.log(fecha);
   console.log(dateUTC);
   // console.log(req.query);
-  
-  const query = `
-  INSERT INTO tabla_datos 
-    (id, timestamp, dateUTC, lat, lon, speed, bearing, altitude, accuracy, batt) 
-  VALUES 
-    (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-  `;
-   
-  const values = [
-      datos.id,
-      datos.timestamp,
-      dateUTC,
-      datos.lat,
-      datos.lon,
-      datos.speed,
-      datos.bearing,
-      datos.altitude,
-      datos.accuracy,
-      datos.batt
-    ];
-  
-    conexion.query(query, values, (error, resultados) => {
-      if (error) {
-        console.error('Error al guardar datos en la base de datos:', error);
-        res.status(500).send('Error interno del servidor');
-        return;
-      }
-      // console.log('Datos guardados en la base de datos:', resultados);
-      // Enviar una respuesta al cliente
-      res.send('Datos recibidos y guardados por el servidor');
-    });
   });
   
   // Iniciar el servidor para que escuche en el puerto especificado
