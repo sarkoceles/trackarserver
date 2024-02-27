@@ -1,6 +1,9 @@
 import express from "express";
 import { pool } from './db.js'
 import { PORT, DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT } from "./config.js";
+import mysql from "mysql2";
+
+
 
 const app = express();
 
