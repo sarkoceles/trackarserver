@@ -6,7 +6,7 @@ const app = express();
 
 // Configurar el middleware para manejar solicitudes POST
 app.use(express.text());
-app.post("/", (req, res) => {
+app.post("/", async (req, res) => {
   // Guardar los datos recibidos en la base de datos
   const datos = req.query;
   // Convertir el timestamp a una fecha legible en UTC para Ciudad de México
@@ -29,7 +29,21 @@ app.post("/", (req, res) => {
 
   // console.log(fecha);
   // console.log(dateUTC);
-  console.log("Datos recibidos y guardados por el servidor");
+
+    const result = await pool.query(`
+    INSERT INTO tabla_datos_trackar 
+      (timestamp, dateUTC, lat, lon, speed, bearing, altitude, accuracy, batt, id_trackar) 
+    VALUES 
+      (datos,timestamp, dateUTC, datos.lat, datos.lon, datos.speed, datos.bearing, datos.altitude, datos.accuracy, datos.batt, datos.id)
+    `) 
+
+
+
+
+
+    res.json(result)
+
+
   res.status(200).send('Datos recibidos y guardados por el servidor');
 });
 
