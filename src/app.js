@@ -9,12 +9,12 @@ const app = express();
 // Configurar el middleware para manejar solicitudes POST
 app.use(express.text());
 
-const conexion = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME
-});
+// const conexion = mysql.createConnection({
+//   host: process.env.DB_HOST,
+//   user: process.env.DB_USER,
+//   password: process.env.DB_PASSWORD,
+//   database: process.env.DB_NAME
+// });
 //  console.log(conexion);
 // conexion.connect((err) => {
 //   if (err) {
