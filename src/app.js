@@ -1,4 +1,5 @@
 import express from "express";
+import { pool } from './db.js'
 import { PORT } from "./config.js";
 
 const app = express();
@@ -28,10 +29,14 @@ app.post("/", (req, res) => {
 
   // console.log(fecha);
   // console.log(dateUTC);
-  // console.log(req.query);
+  console.log("Datos recibidos y guardados por el servidor");
   res.status(200).send('Datos recibidos y guardados por el servidor');
 });
 
+app.get('/ping', async (req, res) => {
+  const [result] = await pool.query(`SELECT "hello world" as RESULT`);
+  res.json(result[0])
+})
 // Iniciar el servidor para que escuche en el puerto especificado
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}/`);
