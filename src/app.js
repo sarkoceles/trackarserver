@@ -47,7 +47,7 @@ app.post("/", async (req, res) => {
 
 
 
-console.log("DB_HOST", DB_HOST);
+console.log("DB_HOST", process.env.DB_HOST);
 console.log("DB_USER", DB_USER);
 console.log("DB_PASSWORD", DB_PASSWORD);
 console.log("DB_NAME", DB_NAME);
