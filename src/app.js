@@ -47,11 +47,7 @@ app.post("/", async (req, res) => {
 
 
 
-console.log("DB_HOST", process.env.MYSQLHOST);
-console.log("DB_USER",process.env. MYSQLUSER);
-console.log("DB_PASSWORD", process.env.MYSQLPASSWORD);
-console.log("DB_NAME", process.env.MYSQLDATABASE);
-console.log("DB_PORT", process.env.MYSQLPORT);
+
     // console.log(datos);
 // console.log(result);
 
@@ -72,3 +68,8 @@ app.listen(PORT, () => {
 
 // app.listen(PORT)
 console.log("Server on port", PORT);
+console.log("DB_HOST", DB_HOST);
+console.log("DB_USER",DB_USER);
+console.log("DB_PASSWORD", DB_PASSWORD);
+console.log("DB_NAME",DB_NAME);
+console.log("DB_PORT", DB_NAME);
