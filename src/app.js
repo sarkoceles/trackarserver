@@ -49,9 +49,9 @@ app.post("/", async (req, res) => {
 
 console.log("DB_HOST", process.env.MYSQLHOST);
 console.log("DB_USER",process.env. MYSQLUSER);
-console.log("DB_PASSWORD", rocess.env.MYSQLPASSWORD);
+console.log("DB_PASSWORD", process.env.MYSQLPASSWORD);
 console.log("DB_NAME", process.env.MYSQLDATABASE);
-console.log("DB_PORT", rocess.env.MYSQLPORT);
+console.log("DB_PORT", process.env.MYSQLPORT);
     // console.log(datos);
 // console.log(result);
 
