@@ -38,7 +38,7 @@ app.post("/", async (req, res) => {
     `) 
 
 
-
+    console.log(datos);
 console.log(result);
 
   
