@@ -2,19 +2,26 @@ import express from "express";
 import { pool } from './db.js'
 import { PORT, DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT } from "./config.js";
 
-const mysql = require('mysql2');
+import mysql from 'mysql2';
 
 const app = express();
 
 // Configurar el middleware para manejar solicitudes POST
 app.use(express.text());
 
-
 const conexion = mysql.createConnection({
-  host: DB_HOST,
-  user: DB_USER,
-  password: DB_PASSWORD,
-  database: DB_NAME
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
+});
+
+conexion.connect((err) => {
+  if (err) {
+    console.error('Error al conectar a la base de datos:', err);
+    return;
+  }
+  console.log('Conexión a la base de datos MySQL establecida correctamente');
 });
 
 conexion.connect((err) => {
