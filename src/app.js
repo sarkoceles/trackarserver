@@ -65,10 +65,22 @@ app.post("/", async (req, res) => {
 
 
 
+const values = {
+  id :datos.id,
+  timestamp:datos.timestamp,
+  dateUTC:dateUTC,
+  lat:datos.lat,
+  lon:datos.lon,
+  speed:datos.speed,
+  bearing:datos.bearing,
+  altitude: datos.altitude,
+  accuracy:datos.accuracy,
+  batt:datos.batt
+};
 
 
 
-  console.log(datos);
+  console.log(values);
 // console.log(result);
 
   
