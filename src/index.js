@@ -74,7 +74,8 @@ const values = [
     }
     // console.log('Datos guardados en la base de datos:', resultados);
     // Enviar una respuesta al cliente
-    res.send('Datos recibidos y guardados por el servidor');
+ 
+    res.status(200).send('RDatos recibidos y guardados por el servidor');
   });
 });
 
