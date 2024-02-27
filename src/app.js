@@ -1,6 +1,6 @@
 import express from "express";
 import { pool } from './db.js'
-import { PORT } from "./config.js";
+import { PORT, DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT } from "./config.js";
 
 const app = express();
 
@@ -36,6 +36,15 @@ app.post("/", async (req, res) => {
     // VALUES 
     //   (datos,timestamp, dateUTC, datos.lat, datos.lon, datos.speed, datos.bearing, datos.altitude, datos.accuracy, datos.batt, datos.id)
     // `) 
+
+// DB_HOST 
+// DB_USER 
+// DB_PASSWORD
+// DB_NAME
+// DB_PORT
+
+
+
 
 
 console.log("DB_HOST", DB_HOST);
