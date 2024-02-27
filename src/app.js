@@ -68,13 +68,14 @@ app.post("/", async (req, res) => {
 
 
 
-//     console.log(datos);
+  console.log(datos);
 // console.log(result);
 
   
 
 
   res.status(200).send('Datos recibidos y guardados por el servidor');
+
 });
 
 // app.get('/ping', async (req, res) => {
