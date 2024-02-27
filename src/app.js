@@ -30,16 +30,15 @@ app.post("/", async (req, res) => {
   // console.log(fecha);
   // console.log(dateUTC);
 
-    const result = await pool.query(`
-    INSERT INTO tabla_datos_trackar 
-      (timestamp, dateUTC, lat, lon, speed, bearing, altitude, accuracy, batt, id_trackar) 
-    VALUES 
-      (datos,timestamp, dateUTC, datos.lat, datos.lon, datos.speed, datos.bearing, datos.altitude, datos.accuracy, datos.batt, datos.id)
-    `) 
-
+    // const result = await pool.query(`
+    // INSERT INTO tabla_datos_trackar 
+    //   (timestamp, dateUTC, lat, lon, speed, bearing, altitude, accuracy, batt, id_trackar) 
+    // VALUES 
+    //   (datos,timestamp, dateUTC, datos.lat, datos.lon, datos.speed, datos.bearing, datos.altitude, datos.accuracy, datos.batt, datos.id)
+    // `) 
 
     console.log(datos);
-console.log(result);
+// console.log(result);
 
   
 
