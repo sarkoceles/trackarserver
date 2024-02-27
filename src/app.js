@@ -6,6 +6,24 @@ const app = express();
 
 // Configurar el middleware para manejar solicitudes POST
 app.use(express.text());
+
+
+const conexion = mysql.createConnection({
+  host: DB_HOST,
+  user: DB_USER,
+  password: DB_PASSWORD,
+  database: DB_NAME
+});
+
+conexion.connect((err) => {
+  if (err) {
+    console.error('Error al conectar a la base de datos:', err);
+    return;
+  }
+  console.log('Conexión a la base de datos MySQL establecida correctamente');
+});
+
+
 app.post("/", async (req, res) => {
   // Guardar los datos recibidos en la base de datos
   const datos = req.query;
@@ -30,12 +48,12 @@ app.post("/", async (req, res) => {
   // console.log(fecha);
   // console.log(dateUTC);
 
-    const result = await pool.query(`
-    INSERT INTO tabla_datos_trackar 
-      (timestamp, dateUTC, lat, lon, speed, bearing, altitude, accuracy, batt, id_trackar) 
-    VALUES 
-      (datos,timestamp, dateUTC, datos.lat, datos.lon, datos.speed, datos.bearing, datos.altitude, datos.accuracy, datos.batt, datos.id)
-    `) 
+    // const result = await pool.query(`
+    // INSERT INTO tabla_datos_trackar 
+    //   (timestamp, dateUTC, lat, lon, speed, bearing, altitude, accuracy, batt, id_trackar) 
+    // VALUES 
+    //   (datos,timestamp, dateUTC, datos.lat, datos.lon, datos.speed, datos.bearing, datos.altitude, datos.accuracy, datos.batt, datos.id)
+    // `) 
 
 // DB_HOST 
 // DB_USER 
