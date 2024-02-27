@@ -68,5 +68,5 @@ app.listen(PORT, () => {
 
 // app.listen(PORT)
 console.log("Server on port", PORT);
-console.log(process.env.DB_HOST);
+console.log("DB_HOST: ",process.env.DB_HOST);
 
