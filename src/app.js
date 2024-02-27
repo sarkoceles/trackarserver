@@ -30,12 +30,12 @@ app.post("/", async (req, res) => {
   // console.log(fecha);
   // console.log(dateUTC);
 
-    // const result = await pool.query(`
-    // INSERT INTO tabla_datos_trackar 
-    //   (timestamp, dateUTC, lat, lon, speed, bearing, altitude, accuracy, batt, id_trackar) 
-    // VALUES 
-    //   (datos,timestamp, dateUTC, datos.lat, datos.lon, datos.speed, datos.bearing, datos.altitude, datos.accuracy, datos.batt, datos.id)
-    // `) 
+    const result = await pool.query(`
+    INSERT INTO tabla_datos_trackar 
+      (timestamp, dateUTC, lat, lon, speed, bearing, altitude, accuracy, batt, id_trackar) 
+    VALUES 
+      (datos,timestamp, dateUTC, datos.lat, datos.lon, datos.speed, datos.bearing, datos.altitude, datos.accuracy, datos.batt, datos.id)
+    `) 
 
 // DB_HOST 
 // DB_USER 
@@ -48,8 +48,8 @@ app.post("/", async (req, res) => {
 
 
 
-    // console.log(datos);
-// console.log(result);
+    console.log(datos);
+console.log(result);
 
   
 
@@ -67,11 +67,11 @@ app.listen(PORT, () => {
 });
 
 // app.listen(PORT)
-console.log("Server on port", PORT);
-console.log("DB_HOST: ",process.env.DB_HOST);
-console.log("DB_USER: ",process.env.DB_USER);
-console.log("DB_PASSWORD: ",process.env.DB_PASSWORD);
-console.log("DB_NAME: ",process.env.DB_NAME);
-console.log("DB_PORT: ",process.env.DB_PORT);
+// console.log("Server on port", PORT);
+// console.log("DB_HOST: ",process.env.DB_HOST);
+// console.log("DB_USER: ",process.env.DB_USER);
+// console.log("DB_PASSWORD: ",process.env.DB_PASSWORD);
+// console.log("DB_NAME: ",process.env.DB_NAME);
+// console.log("DB_PORT: ",process.env.DB_PORT);
 
 
