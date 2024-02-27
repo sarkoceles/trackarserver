@@ -68,8 +68,8 @@ app.post("/", async (req, res) => {
 
 
 
-    console.log(datos);
-console.log(result);
+//     console.log(datos);
+// console.log(result);
 
   
 
@@ -77,10 +77,10 @@ console.log(result);
   res.status(200).send('Datos recibidos y guardados por el servidor');
 });
 
-app.get('/ping', async (req, res) => {
-  const [result] = await pool.query(`SELECT "hello world" as RESULT`);
-  res.json(result[0])
-})
+// app.get('/ping', async (req, res) => {
+//   const [result] = await pool.query(`SELECT "hello world" as RESULT`);
+//   res.json(result[0])
+// })
 // Iniciar el servidor para que escuche en el puerto especificado
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}/`);
